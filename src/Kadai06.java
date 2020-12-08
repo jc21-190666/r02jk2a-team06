@@ -9,6 +9,17 @@ public class Kadai06 {
 	 */
 	int get2ndMax(int[] d) {
 		
-		return -1;
+		for(int i = 0;i < d.length - 1;i++) {
+			
+			for(int j =0;j < d.length - 1;j++) {
+				
+				if (d[i] < d[j+1]) {
+					int min = d[j];
+					d[j] = d[j+1];
+					d[j+1] = min;
+				}
+			}
+		}
+		return d[1];
 	}
 }
