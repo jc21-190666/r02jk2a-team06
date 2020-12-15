@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 public class Kadai04 {
 
@@ -8,7 +9,32 @@ public class Kadai04 {
 	 * @return sの中に入っていた文字
 	 */
 	char getMaxString(String s) {
-		char c = ' ';
+		
+		char[] a = s.toCharArray();
+		Arrays.sort(a);
+		
+		int i ;
+		int j ;
+		int count = 0;
+		int max = 0;
+		char mm = ' ';
+		
+		for( i = 0;i < s.length() -1;i = j) {
+			
+			for( j = i + 1;j < s.length() - 1;j++) {
+				
+				if(a[i] == a[j]) {
+					count++;
+						
+				}
+			}
+			if(max < count) {
+				max = count;
+				mm = a[i];
+			}
+		}
+		char c = mm;
 		return c;
 	}
+	
 }
